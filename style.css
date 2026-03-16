@@ -1,0 +1,262 @@
+/* ----------------------------- */
+/* 1. Body Reset & Global Styles */
+/* ----------------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Links default */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ----------------------------- */
+/* 2. Navbar */
+/* ----------------------------- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 15px 45px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    margin-left: 20px;
+    color: white;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00bfff;
+}
+
+/* ----------------------------- */
+/* 3. Home Section */
+/* ----------------------------- */
+section#Home {
+    text-align: center;
+    padding: 100px 25px;
+    background-color: #e0f7fa;
+    min-height: calc(100vh - 60px); /* adjust for navbar height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section#Home h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+section#Home p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+section#Home button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+section#Home button:hover {
+    background-color: #0099cc;
+}
+
+/* ----------------------------- */
+/* 4. About Section */
+/* ----------------------------- */
+section#About {
+    padding: 100px 25px;
+    background-color: white;
+    text-align: center;
+}
+
+section#About h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+section#About p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ----------------------------- */
+/* 5. Skills Section */
+/* ----------------------------- */
+section#skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+section#skills h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+    width: 100%;
+    text-align: center;
+}
+
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill-badges span {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.skill-badges span:hover {
+    background-color: #00bfff;
+    color: white;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* ----------------------------- */
+/* 6. Projects Section */
+/* ----------------------------- */
+section#Project {
+    padding: 100px 25px;
+    background-color: white;
+    text-align: center;
+}
+
+section#Project h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+section#Project h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+section#Project p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* ----------------------------- */
+/* 7. Contact Section */
+/* ----------------------------- */
+section#Contact {
+    padding: 100px 25px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+section#Contact h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+section#Contact p {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #555;
+}
+
+/* ----------------------------- */
+/* 8. Footer */
+/* ----------------------------- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* ----------------------------- */
+/* 9. Responsive Design */
+/* ----------------------------- */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 25px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li a {
+        margin: 8px 0;
+    }
+
+    section#Home h1 {
+        font-size: 32px;
+    }
+
+    section#Home p, section#About p, section#Project p, section#Contact p {
+        font-size: 16px;
+    }
+
+    section#skills h2 {
+        font-size: 30px;
+    }
+
+    .skill-badges span {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    section#Project h3 {
+        font-size: 20px;
+    }
+}

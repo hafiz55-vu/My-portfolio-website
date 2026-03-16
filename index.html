@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafiz Portfolio</title>
+    <style>
+        /* ===== Basic Reset ===== */
+        * {margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif;}
+        body {scroll-behavior: smooth;}
+
+        /* ===== Navbar ===== */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 30px; background-color: #333; color: white; position: sticky; top:0; z-index:1000;
+        }
+        nav ul {display: flex; list-style: none;}
+        nav ul li {margin-left: 20px;}
+        nav ul li a {color:white; text-decoration:none; transition: color 0.3s;}
+        nav ul li a:hover {color: #00bfff;}
+
+        /* ===== Sections ===== */
+        section {padding: 100px 20px; min-height: 100vh; text-align: center;}
+        #Home {background-color:#e0f7fa;}
+        #About {background-color:white;}
+        #Skills {background-color:#f9f9f9;}
+        #Project {background-color:white;}
+        #Contact {background-color:#e8f0f8;}
+
+        /* ===== Home ===== */
+        #Home h1 {font-size: 40px; margin-bottom: 15px;}
+        #Home p {font-size: 20px; color: #555; margin-bottom: 20px;}
+        #Home button {
+            padding: 10px 20px; font-size:16px; border:none; border-radius:5px;
+            background-color: #00bfff; color:white; cursor:pointer;
+            transition: background 0.3s;
+        }
+        #Home button:hover {background-color:#009acd;}
+
+        /* ===== About ===== */
+        #About h2 {font-size: 32px; margin-bottom: 15px; color:#333;}
+        #About p {max-width:700px; margin:0 auto; font-size:18px; color:#555; line-height:1.6;}
+
+        /* ===== Skills ===== */
+        #Skills h2 {font-size:32px; margin-bottom:20px; color:#333;}
+        .skill-badges {display:flex; flex-wrap:wrap; justify-content:center; gap:15px;}
+        .skill-badges span {
+            display:inline-block; padding:10px 20px; border-radius:8px; background:#e0e0e0;
+            font-weight:bold; color:#333; cursor:pointer; transition: all 0.3s;
+        }
+        .skill-badges span:hover {background:#00bfff; color:white; transform: scale(1.1);}
+        .skill-badges .active {background:#00bfff; color:white; transform: scale(1.1);}
+
+        /* ===== Projects ===== */
+        #Project h2 {font-size:32px; margin-bottom:30px; color:#333;}
+        .project-container {display:flex; flex-wrap:wrap; justify-content:center; gap:20px; max-width:1000px; margin:0 auto;}
+        .project-card {
+            background:#e0e0e0; padding:20px; border-radius:10px; width:280px; transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2);}
+        .project-card h3 {font-size:22px; margin-bottom:10px;}
+        .project-card p {color:#555; margin-bottom:8px;}
+        .project-card a {color:#00bfff; text-decoration:none; font-weight:bold;}
+        .project-card a:hover {text-decoration:underline;}
+
+        /* ===== Contact ===== */
+        #Contact h2 {font-size:32px; margin-bottom:15px; color:#333;}
+        #Contact p {font-size:18px; color:#555; margin-bottom:5px;}
+
+        /* ===== Footer ===== */
+        footer {background:#333; color:white; text-align:center; padding:15px 0;}
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <h2>Hafiz</h2>
+    <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Skills">Skills</a></li>
+        <li><a href="#Project">Projects</a></li>
+        <li><a href="#Contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Home -->
+<section id="Home">
+    <h1 id="home-heading"></h1>
+    <p>CSE Student | Web Developer</p>
+    <button onclick="scrollToContact()">Contact Me</button>
+</section>
+
+<!-- About -->
+<section id="About">
+    <h2>About Me</h2>
+    <p>I am a CSE student interested in web development and cybersecurity. I enjoy learning new technologies and building websites.</p>
+</section>
+
+<!-- Skills -->
+<section id="Skills">
+    <h2>Skills</h2>
+    <div class="skill-badges">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Python</span>
+        <span>Java</span>
+        <span>C++</span>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="Project">
+    <h2>Projects</h2>
+    <div class="project-container">
+        <div class="project-card">
+            <h3>Caesar Cipher</h3>
+            <p>Python Encryption Project with encryption & decryption functionality.</p>
+            <p><strong>Tech:</strong> Python</p>
+            <a href="https://github.com/hafiz55-vu/cryptography" target="_blank">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>Personal Portfolio using HTML, CSS, and JavaScript. Showcases skills, projects, and contact info.</p>
+            <p><strong>Tech:</strong> HTML, CSS, JS</p>
+            <a href="#" target="_blank">View Project</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="Contact">
+    <h2>Contact</h2>
+    <p>Email: hafiz55vu@gmail.com</p>
+    <p>Phone: 01516554828</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Hafiz Portfolio</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+    // Smooth scroll for navbar links
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e){
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const section = document.getElementById(targetId);
+            section.scrollIntoView({behavior:'smooth'});
+        });
+    });
+
+    // Typewriter effect for Home heading
+    const text = "Hi, I am Hafiz";
+    let i = 0;
+    const heading = document.getElementById("home-heading");
+    function typeWriter(){
+        if(i < text.length){
+            heading.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+        }
+    }
+    typeWriter();
+
+    // Scroll to Contact button
+    function scrollToContact(){
+        document.getElementById("Contact").scrollIntoView({behavior:'smooth'});
+    }
+
+    // Skill badges click highlight
+    const skillBadges = document.querySelectorAll('.skill-badges span');
+    skillBadges.forEach(badge => {
+        badge.addEventListener('click', function(){
+            skillBadges.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>
