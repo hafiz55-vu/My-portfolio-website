@@ -1,37 +1,70 @@
-// Smooth scroll for navbar links
-const navLinks = document.querySelectorAll('nav ul li a');
-navLinks.forEach(link => {
-    link.addEventListener('click', function(e){
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const section = document.getElementById(targetId);
-        section.scrollIntoView({behavior:'smooth'});
-    });
-});
+// Typewriter Effect
+const homeHeading = document.getElementById('home-heading');
+const text = "Welcome to My Portfolio";
+let index = 0;
 
-// Typewriter effect for Home heading
-const text = "Hi, I am Hafiz";
-let i = 0;
-const heading = document.getElementById("home-heading");
-function typeWriter(){
-    if(i < text.length){
-        heading.innerHTML += text.charAt(i);
-        i++;
+function typeWriter() {
+    if (index < text.length) {
+        homeHeading.innerHTML += text.charAt(index);
+        index++;
         setTimeout(typeWriter, 100);
     }
 }
+
 typeWriter();
 
-// Scroll to Contact button
-function scrollToContact(){
-    document.getElementById("Contact").scrollIntoView({behavior:'smooth'});
+// Scroll to Contact
+function scrollToContact() {
+    const contactSection = document.getElementById('Contact');
+    contactSection.scrollIntoView({ behavior: 'smooth' });
 }
 
-// Skill badges click highlight
-const skillBadges = document.querySelectorAll('.skill-badges span');
-skillBadges.forEach(badge => {
-    badge.addEventListener('click', function(){
-        skillBadges.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
+// Hamburger Menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+});
+
+// Scroll Reveal for Sections
+const sections = document.querySelectorAll('section');
+
+function revealSections() {
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+        if (sectionTop < screenHeight - 100) {
+            section.classList.add('visible');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealSections);
+window.addEventListener('load', revealSections);
+
+// Active Section Highlight
+const navLinksArray = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinksArray.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active');
+        }
     });
 });
