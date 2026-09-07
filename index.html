@@ -1,90 +1,1463 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hafiz Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Md Hafijul Islam - Portfolio</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #081b29;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        a {
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        p {
+            font-size: 1.2rem;
+            text-align: justify;
+        }
+
+        li {
+            color: white;
+        }
+
+        .dotted-hr {
+            border: dotted 6px white;
+            border-bottom: none;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 529px;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background-color: #081b29;
+            padding: 1% 7%;
+            text-align: center;
+        }
+
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            padding-top: 10px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            text-transform: uppercase;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .navbar-menu a {
+            background-color: transparent;
+            border-radius: 10px;
+            margin: 20px 5px;
+            padding: 10px 10px;
+        }
+
+        .navbar-menu a:hover {
+            background-color: grey;
+        }
+
+        .nav-heading h1 {
+            text-align: left;
+        }
+
+        /* PROFILE */
+
+        .profile {
+            padding: 130px 10px;
+            position: relative;
+            text-align: center;
+            background-color: #081b29;
+        }
+
+        .profile-desc h1 {
+            font-family: monospace;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .profile-desc p {
+            color: white;
+            margin: 0px auto 20px auto;
+            text-align: center;
+            width: 90%;
+        }
+
+        .profile::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        /* ABOUT ME */
+
+        .about-me {
+            background-color: #081b29;
+            padding: 1% 7%;
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        .about-me::after {
+            clear: both;
+            display: table;
+            content: '';
+        }
+
+        .about-me p {
+            text-align: center;
+        }
+
+        .about-me a {
+            font-size: 1.2rem;
+        }
+
+        .aboutme-desc p {
+            text-align: left;
+        }
+
+        /* EDUCATION + SKILLS */
+
+        .professional-experience {
+            padding: 0% 0%;
+            display: flex;
+        }
+
+        .professional-experience .card {
+            background-color: #081b29;
+            border-radius: 5px;
+            padding-bottom: 20px;
+            transition: 0.3s;
+            height: 430px;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 8px 5px black;
+        }
+
+        .card-title h2 {
+            background-color: #081b29;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .education {
+            width: 50%;
+        }
+
+        .skills {
+            width: 50%;
+        }
+
+        .skills .card {
+            height: auto;
+            min-height: 430px;
+        }
+
+        .skills-container {
+            padding-right: 45px;
+        }
+
+        .skills-container li {
+            list-style: none;
+            font-weight: bold;
+            margin: 30px 10px;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .skills-container li::before {
+            content: '';
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: rgb(86, 86, 153, .5);
+            border-radius: 100px;
+        }
+
+        .skills-container li::after {
+            content: '';
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+            width: 0%;
+            height: 10px;
+            background-color: rgb(86, 86, 153, 1);
+            border-radius: 100px;
+            animation-duration: 3s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+
+        .skills-container li.html::after {
+            animation-name: html;
+        }
+
+        @keyframes html {
+            to {
+                width: 90%;
+            }
+        }
+
+        .skills-container li.css::after {
+            animation-name: css;
+        }
+
+        @keyframes css {
+            to {
+                width: 85%;
+            }
+        }
+
+        .skills-container li.javascript::after {
+            animation-name: javascript;
+        }
+
+        @keyframes javascript {
+            to {
+                width: 80%;
+            }
+        }
+
+        .skills-container li.python::after {
+            animation-name: python;
+        }
+
+        @keyframes python {
+            to {
+                width: 80%;
+            }
+        }
+
+        .skills-container li.cpp::after {
+            animation-name: cpp;
+        }
+
+        @keyframes cpp {
+            to {
+                width: 85%;
+            }
+        }
+
+        .skills-container li.java::after {
+            animation-name: java;
+        }
+
+        @keyframes java {
+            to {
+                width: 75%;
+            }
+        }
+
+        .skills-container li.sql::after {
+            animation-name: sql;
+        }
+
+        @keyframes sql {
+            to {
+                width: 80%;
+            }
+        }
+
+        .skills-container li.github::after {
+            animation-name: github;
+        }
+
+        @keyframes github {
+            to {
+                width: 75%;
+            }
+        }
+
+        .professional-experience::after {
+            clear: both;
+            display: table;
+            content: '';
+        }
+
+        /* PROJECTS */
+
+        .project-list li,
+        .research-list li,
+        .achievement-list li {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #4da6ff;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 5px;
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* CONTACT */
+
+        .achievment-contact {
+            padding: 1% 7%;
+            color: white;
+            display: flex;
+        }
+
+        .contact {
+            padding: 1% 7%;
+            text-align: center;
+            width: 50%;
+        }
+
+        .contact input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        .contact button {
+            border: none;
+            border-radius: 12px;
+            background-color: brown;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            margin: 10px;
+            width: 150px;
+        }
+
+        .contact-links {
+            text-align: center;
+            position: relative;
+            width: 50%;
+        }
+
+        .media-buttons {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .media-buttons .btn {
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 32px;
+            padding: 5px;
+            margin: 10px;
+            width: 50px;
+            background-color: white;
+        }
+
+        .btn:hover {
+            background-color: gray;
+        }
+
+        .achievment-contact::after {
+            clear: both;
+            display: table;
+            content: '';
+        }
+
+        /* FOOTER */
+
+        .footer {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            display: flex;
+        }
+
+        .footer-menu {
+            margin-top: 12px;
+            width: 50%;
+        }
+
+        .footer-desc {
+            width: 50%;
+        }
+
+        .footer-menu a {
+            display: inline-block;
+            margin: 15px 10px;
+            font-size: 1rem;
+        }
+
+        .footer-menu a:hover {
+            color: gray;
+        }
+
+        .footer::after {
+            clear: both;
+            display: table;
+            content: '';
+        }
+
+        /* MOBILE RESPONSIVE */
+
+        @media screen and (max-width: 768px) {
+
+            .navbar-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .navbar-menu a {
+                margin: 5px;
+                font-size: 1rem;
+                padding: 5px;
+            }
+
+            .nav-heading h1 {
+                text-align: center;
+            }
+
+            .profile-desc h1 {
+                font-size: 2.2rem;
+            }
+
+            .professional-experience {
+                flex-direction: column;
+            }
+
+            .education,
+            .skills {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .card {
+                height: auto;
+            }
+
+            .achievment-contact {
+                flex-direction: column;
+            }
+
+            .contact,
+            .contact-links {
+                width: 100%;
+            }
+
+            .contact-links {
+                margin-top: 30px;
+                height: 150px;
+            }
+
+            .footer {
+                flex-direction: column;
+            }
+
+            .footer-menu,
+            .footer-desc {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- Navbar -->
-<nav>
-    <h2>Hafiz</h2>
-    <div class="nav-links" id="navLinks">
-        <ul>
-            <li><a href="#Home" class="nav-link">Home</a></li>
-            <li><a href="#About" class="nav-link">About</a></li>
-            <li><a href="#Skills" class="nav-link">Skills</a></li>
-            <li><a href="#Project" class="nav-link">Projects</a></li>
-            <li><a href="#Contact" class="nav-link">Contact</a></li>
-        </ul>
-    </div>
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <div class="theme-toggle" id="themeToggle">🌙</div>
-</nav>
+    <!-- NAVBAR -->
 
-<!-- Home Section -->
-<section id="Home">
-    <h1 id="home-heading"></h1>
-    <p>CSE Student | Web Developer</p>
-    <button onclick="scrollToContact()">Contact Me</button>
-</section>
+    <div class="navbar">
 
-<!-- About -->
-<section id="About">
-    <h2>About Me</h2>
-    <p>I am a CSE student passionate about web development and cybersecurity. I enjoy building interactive websites and learning new technologies.</p>
-</section>
-
-<!-- Skills -->
-<section id="Skills">
-    <h2>Skills</h2>
-    <div class="skill-badges">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Python</span>
-        <span>Java</span>
-        <span>C++</span>
-    </div>
-</section>
-
-<!-- Projects -->
-<section id="Project">
-    <h2>Projects</h2>
-    <div class="project-container">
-        <div class="project-card">
-            <h3>Caesar Cipher</h3>
-            <p>Python encryption project with encryption & decryption functionality.</p>
-            <p><strong>Tech:</strong> Python</p>
-            <a href="https://github.com/hafiz55-vu/cryptography" target="_blank">View Project</a>
+        <div class="nav-heading">
+            <h1>Portfolio</h1>
         </div>
-        <div class="project-card">
-            <h3>Portfolio Website</h3>
-            <p>Personal portfolio using HTML, CSS, and JavaScript.</p>
-            <p><strong>Tech:</strong> HTML, CSS, JS</p>
-            <a href="#" target="_blank">View Project</a>
+
+        <div class="navbar-menu">
+
+            <a href="#">Home</a>
+
+            <a href="#about-me-id">
+                About Me
+            </a>
+
+            <a href="#skill-id">
+                Skills
+            </a>
+
+            <a href="#projects-id">
+                Projects
+            </a>
+
+            <a href="#research-id">
+                Research
+            </a>
+
+            <a href="#certifications-id">
+                Achievements
+            </a>
+
+            <a href="#contact-id">
+                Contact Me
+            </a>
+
         </div>
+
     </div>
-</section>
 
-<!-- Contact -->
-<section id="Contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:hafiz55vu@gmail.com">hafiz55vu@gmail.com</a></p>
-    <p>Phone: <a href="tel:+8801516554828">01516554828</a></p>
-    <div class="social-links">
-        <a href="https://github.com/hafiz55-vu" target="_blank">GitHub</a>
-        <a href="#" target="_blank">LinkedIn</a>
+
+    <!-- PROFILE -->
+
+    <div class="profile">
+
+        <div class="profile-desc">
+
+            <h1>
+                Hi! I'm Md. Hafijul Islam
+            </h1>
+
+            <p>
+                A Computer Science and Engineering graduate with a strong
+                foundation in programming, web development, database management,
+                network security, machine learning, and problem-solving.
+            </p>
+
+        </div>
+
     </div>
-</section>
 
-<!-- Footer -->
-<footer>
-    <p>© 2026 Hafiz Portfolio</p>
-</footer>
 
-<script src="script.js"></script>
+    <!-- ABOUT ME -->
+
+    <div class="about-me" id="about-me-id">
+
+        <h2>
+            ABOUT ME
+        </h2>
+
+        <hr class="dotted-hr">
+
+        <div class="aboutme-desc">
+
+            <p>
+                Name: Md. Hafijul Islam
+            </p>
+
+            <hr class="aboutme-hr">
+
+            <p>
+                Address: Rajshahi, Bangladesh
+            </p>
+
+            <hr class="aboutme-hr">
+
+            <p>
+                Email:
+
+                <a href="mailto:YOUR_EMAIL@gmail.com">
+                    YOUR_EMAIL@gmail.com
+                </a>
+
+            </p>
+
+            <hr class="aboutme-hr">
+
+            <p>
+                Phone:
+
+                <a href="tel:YOUR_PHONE">
+                    YOUR_PHONE
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- EDUCATION + SKILLS -->
+
+    <div class="professional-experience">
+
+        <!-- EDUCATION -->
+
+        <div class="education">
+
+            <div class="card">
+
+                <div class="card-title">
+
+                    <h2>
+                        EDUCATION
+                    </h2>
+
+                </div>
+
+                <div class="card-desc">
+
+                    <ol>
+
+                        <li>
+
+                            <strong>
+                                B.Sc. in Computer Science & Engineering
+                            </strong>
+
+                            <br>
+
+                            Varendra University
+
+                            <br>
+
+                            Rajshahi, Bangladesh
+
+                            <br>
+
+                            Passing Year: 2026
+
+                            <br>
+
+                            CGPA: 3.70
+
+                        </li>
+
+                        <br>
+
+                        <li>
+
+                            <strong>
+                                HSC
+                            </strong>
+
+                            <br>
+
+                            Rajshahi, Bangladesh
+
+                            <br>
+
+                            Passing Year: 2018
+
+                            <br>
+
+                            GPA: 3.92
+
+                        </li>
+
+                        <br>
+
+                        <li>
+
+                            <strong>
+                                SSC
+                            </strong>
+
+                            <br>
+
+                            Rajshahi, Bangladesh
+
+                            <br>
+
+                            Passing Year: 2016
+
+                            <br>
+
+                            GPA: 5.00
+
+                        </li>
+
+                    </ol>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SKILLS -->
+
+        <div class="skills" id="skill-id">
+
+            <div class="card">
+
+                <div class="card-title">
+
+                    <h2>
+                        SKILLS
+                    </h2>
+
+                </div>
+
+                <div class="card-desc">
+
+                    <div class="skills-container">
+
+                        <ul>
+
+                            <li class="html">
+                                HTML
+                            </li>
+
+                            <li class="css">
+                                CSS
+                            </li>
+
+                            <li class="javascript">
+                                JavaScript
+                            </li>
+
+                            <li class="python">
+                                Python
+                            </li>
+
+                            <li class="cpp">
+                                C++
+                            </li>
+
+                            <li class="java">
+                                Java
+                            </li>
+
+                            <li class="sql">
+                                SQL
+                            </li>
+
+                            <li class="github">
+                                Git & GitHub
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROJECTS -->
+
+    <div class="professional-experience"
+        id="projects-id"
+        style="justify-content: center; margin-top: 20px;">
+
+        <div class="card"
+            style="width: 100%; max-width: 900px; height: auto;">
+
+            <div class="card-title">
+
+                <h2>
+                    PROJECTS
+                </h2>
+
+            </div>
+
+            <div class="card-desc"
+                style="color: white; padding: 0 40px;">
+
+                <ul class="project-list">
+
+
+                    <!-- PROJECT 1 -->
+
+                    <li>
+
+                        <strong>
+                            Food Ordering System
+                        </strong>
+
+                        <br>
+
+                        <em>
+                            Web Development, Database Management
+                        </em>
+
+                        <br>
+
+                        Developed a food ordering system for managing
+                        food items, customer orders and related information.
+
+                        <br>
+
+                        <a class="project-link"
+                            href="https://github.com/hafiz55-vu/Food-Odering-System-Project"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa fa-github"></i>
+                            View on GitHub
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- PROJECT 2 -->
+
+                    <li>
+
+                        <strong>
+                            Smart IR Remote Controller
+                        </strong>
+
+                        <br>
+
+                        <em>
+                            IoT, Arduino, ESP8266, IR Communication
+                        </em>
+
+                        <br>
+
+                        Developed a smart infrared remote controller
+                        project for controlling electronic devices.
+
+                        <br>
+
+                        <a class="project-link"
+                            href="https://github.com/hafiz55-vu/Smart-IR-Remote-Controller"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa fa-github"></i>
+                            View on GitHub
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- PROJECT 3 -->
+
+                    <li>
+
+                        <strong>
+                            SQL Query Project
+                        </strong>
+
+                        <br>
+
+                        <em>
+                            SQL, Database Management
+                        </em>
+
+                        <br>
+
+                        Implemented SQL queries and database operations
+                        for practicing relational database concepts.
+
+                        <br>
+
+                        <a class="project-link"
+                            href="https://github.com/hafiz55-vu/Sql_query"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa fa-github"></i>
+                            View on GitHub
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- PROJECT 4 -->
+
+                    <li>
+
+                        <strong>
+                            Scientific Calculator
+                        </strong>
+
+                        <br>
+
+                        <em>
+                            Programming, Mathematics
+                        </em>
+
+                        <br>
+
+                        Developed a scientific calculator application
+                        for performing mathematical and scientific calculations.
+
+                        <br>
+
+                        <a class="project-link"
+                            href="https://github.com/hafiz55-vu/Scientific-Calculator"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa fa-github"></i>
+                            View on GitHub
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- PROJECT 5 -->
+
+                    <li>
+
+                        <strong>
+                            My Portfolio Website
+                        </strong>
+
+                        <br>
+
+                        <em>
+                            HTML, CSS, JavaScript, Responsive Web Design
+                        </em>
+
+                        <br>
+
+                        Designed and developed a personal portfolio website
+                        to showcase education, skills, projects and research.
+
+                        <br>
+
+                        <a class="project-link"
+                            href="https://github.com/hafiz55-vu/My-portfolio-website"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa fa-github"></i>
+                            View on GitHub
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- PROJECT 6 -->
+
+                    <li>
+
+                        <strong>
+                            Parallel Processing Project
+                        </strong>
+
+                        <br>
+
+                        <em>
+                            Parallel Processing, C/C++, Computing
+                        </em>
+
+                        <br>
+
+                        Implemented parallel processing concepts and
+                        techniques for improving computational performance.
+
+                        <br>
+
+                        <a class="project-link"
+                            href="https://github.com/hafiz55-vu/Parallel_Processing"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa fa-github"></i>
+                            View on GitHub
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- PROJECT 7 -->
+
+                    <li>
+
+                        <strong>
+                            Cryptography Project
+                        </strong>
+
+                        <br>
+
+                        <em>
+                            Cryptography, Information Security
+                        </em>
+
+                        <br>
+
+                        Implemented cryptographic concepts and techniques
+                        related to data security and information protection.
+
+                        <br>
+
+                        <a class="project-link"
+                            href="https://github.com/hafiz55-vu/cryptography"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa fa-github"></i>
+                            View on GitHub
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- PROJECT 8 -->
+
+                    <li>
+
+                        <strong>
+                            Digital Image Processing Project
+                        </strong>
+
+                        <br>
+
+                        <em>
+                            Digital Image Processing, MATLAB/Python
+                        </em>
+
+                        <br>
+
+                        Worked with digital image processing techniques
+                        and implemented image manipulation and processing tasks.
+
+                        <br>
+
+                        <a class="project-link"
+                            href="https://github.com/hafiz55-vu/Digital_Image_Processing"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa fa-github"></i>
+                            View on GitHub
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- PROJECT 9 -->
+
+                    <li>
+
+                        <strong>
+                            Computer Graphics Project
+                        </strong>
+
+                        <br>
+
+                        <em>
+                            Computer Graphics, OpenGL, C++
+                        </em>
+
+                        <br>
+
+                        Developed computer graphics applications using
+                        graphics programming concepts and OpenGL.
+
+                        <br>
+
+                        <a class="project-link"
+                            href="https://github.com/hafiz55-vu/computer_graphics"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa fa-github"></i>
+                            View on GitHub
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- PROJECT 10 -->
+
+                    <li>
+
+                        <strong>
+                            Digital Signal Processing Project
+                        </strong>
+
+                        <br>
+
+                        <em>
+                            DSP, Python, MATLAB
+                        </em>
+
+                        <br>
+
+                        Implemented digital signal processing techniques
+                        for signal analysis and processing.
+
+                        <br>
+
+                        <a class="project-link"
+                            href="https://github.com/hafiz55-vu/dsp-project"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa fa-github"></i>
+                            View on GitHub
+
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESEARCH -->
+
+    <div class="professional-experience"
+        id="research-id"
+        style="justify-content: center; margin-top: 20px;">
+
+        <div class="card"
+            style="width: 100%; max-width: 900px; height: auto;">
+
+            <div class="card-title">
+
+                <h2>
+                    RESEARCH
+                </h2>
+
+            </div>
+
+            <div class="card-desc"
+                style="color: white;
+                       padding: 0 40px;
+                       padding-bottom: 20px;">
+
+                <ul class="research-list">
+
+                    <li>
+
+                        <strong>
+                            Design and Implementation of an Intelligent
+                            Network Traffic Monitoring and Threat Detection
+                            System for Small-to-Medium Enterprise Networks
+                        </strong>
+
+                        <br><br>
+
+                        <strong>
+                            Research Area:
+                        </strong>
+
+                        Network Security, Intrusion Detection,
+                        Machine Learning, Deep Learning
+
+                        <br><br>
+
+                        <strong>
+                            Methods & Technologies:
+                        </strong>
+
+                        Suricata, Random Forest, XGBoost,
+                        LSTM, Python, React, Express
+
+                        <br><br>
+
+                        Developed a hybrid threat detection approach that
+                        combines signature-based intrusion detection with
+                        machine learning and deep learning models.
+
+                        <br><br>
+
+                        <a class="project-link"
+                            href="https://github.com/hafiz55-vu/Intelligent-Intrusion-Detection-System"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa fa-github"></i>
+                            View Research on GitHub
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CERTIFICATIONS & ACHIEVEMENTS -->
+
+    <div class="professional-experience"
+        id="certifications-id"
+        style="justify-content: center; margin-top: 20px;">
+
+        <div class="card"
+            style="width: 100%; max-width: 900px; height: auto;">
+
+            <div class="card-title">
+
+                <h2>
+                    CERTIFICATIONS & ACHIEVEMENTS
+                </h2>
+
+            </div>
+
+            <div class="card-desc"
+                style="color: white;
+                       padding: 0 40px;
+                       padding-bottom: 20px;">
+
+                <ul class="achievement-list">
+
+                    <li>
+
+                        <strong>
+                            B.Sc. in Computer Science & Engineering
+                        </strong>
+
+                        <br>
+
+                        Varendra University
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>
+                            Academic Project & Research Experience
+                        </strong>
+
+                        <br>
+
+                        Completed academic projects and research work
+                        in software development, network security,
+                        machine learning and web development.
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>
+                            Network Security & Machine Learning Project
+                        </strong>
+
+                        <br>
+
+                        Designed and implemented a hybrid threat detection
+                        system using Suricata, XGBoost and LSTM.
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTACT -->
+
+    <div class="achievment-contact"
+        id="contact-id">
+
+        <div class="contact">
+
+            <h2>
+                CONTACT ME
+            </h2>
+
+            <hr class="dotted-hr">
+
+            <form
+                action="mailto:YOUR_EMAIL@gmail.com"
+                method="post"
+                enctype="text/plain">
+
+                <p>
+
+                    <input
+                        type="text"
+                        placeholder="Your Name"
+                        name="name">
+
+                </p>
+
+                <p>
+
+                    <input
+                        type="email"
+                        placeholder="Your Email"
+                        name="email">
+
+                </p>
+
+                <textarea
+                    name="message"
+                    cols="30"
+                    rows="10"
+                    placeholder="Your Message"></textarea>
+
+                <button type="submit">
+                    SEND
+                </button>
+
+                <button type="reset">
+                    RESET
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <div class="contact-links">
+
+            <h2>
+                More ways to contact
+            </h2>
+
+            <hr class="dotted-hr">
+
+            <div class="media-buttons">
+
+
+                <!-- Facebook -->
+
+                <button
+                    class="btn"
+                    onclick="window.open('YOUR_FACEBOOK_URL', '_blank')">
+
+                    <i
+                        class="fa fa-facebook"
+                        style="color:#3b5998;"
+                        aria-hidden="true">
+                    </i>
+
+                </button>
+
+
+                <!-- GitHub -->
+
+                <button
+                    class="btn"
+                    onclick="window.open(
+                        'https://github.com/hafiz55-vu',
+                        '_blank'
+                    )">
+
+                    <i
+                        class="fa fa-github"
+                        aria-hidden="true"
+                        style="color:#000000;">
+                    </i>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <div class="footer-menu">
+
+            <a href="#">
+                Home
+            </a>
+
+            <a href="#about-me-id">
+                About Me
+            </a>
+
+            <a href="#skill-id">
+                Skills
+            </a>
+
+            <a href="#projects-id">
+                Projects
+            </a>
+
+            <a href="#research-id">
+                Research
+            </a>
+
+            <a href="#certifications-id">
+                Achievements
+            </a>
+
+            <a href="#contact-id">
+                Contact Me
+            </a>
+
+        </div>
+
+
+        <div class="footer-desc">
+
+            &copy; Md. Hafijul Islam 2026.
+            Developed by Md. Hafijul Islam.
+
+        </div>
+
+    </div>
+
+
 </body>
+
 </html>
+```
